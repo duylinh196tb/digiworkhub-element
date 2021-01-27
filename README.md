@@ -1,41 +1,41 @@
-Element
+Digi Work Hub
 =======
 
-Element (formerly known as Vector and Riot) is a Matrix web client built using the [Matrix
+Digi Work Hub (formerly known as Vector and Riot) is a Matrix web client built using the [Matrix
 React SDK](https://github.com/matrix-org/matrix-react-sdk).
 
 Supported Environments
 ======================
 
-Element has several tiers of support for different environments:
+Digi Work Hub has several tiers of support for different environments:
 
 * Supported
   * Definition: Issues **actively triaged**, regressions **block** the release
   * Last 2 major versions of Chrome, Firefox, and Safari on desktop OSes
-  * Latest release of official Element Desktop app on desktop OSes
+  * Latest release of official Digi Work Hub Desktop app on desktop OSes
   * Desktop OSes means macOS, Windows, and Linux versions for desktop devices
     that are actively supported by the OS vendor and receive security updates
 * Experimental
   * Definition: Issues **accepted**, regressions **do not block** the release
-  * Element as an installed PWA via current stable version of Chrome, Firefox, and Safari
+  * Digi Work Hub as an installed PWA via current stable version of Chrome, Firefox, and Safari
   * Mobile web for current stable version of Chrome, Firefox, and Safari on Android, iOS, and iPadOS
 * Not supported
   * Definition: Issues only affecting unsupported environments are **closed**
   * Everything else
 
-For accessing Element on an Android or iOS device, we currently recommend the
+For accessing Digi Work Hub on an Android or iOS device, we currently recommend the
 native apps [element-android](https://github.com/vector-im/element-android)
 and [element-ios](https://github.com/vector-im/element-ios).
 
 Getting Started
 ===============
 
-The easiest way to test Element is to just use the hosted copy at https://app.element.io.
+The easiest way to test Digi Work Hub is to just use the hosted copy at https://app.element.io.
 The `develop` branch is continuously deployed by Jenkins at https://develop.element.io
 for those who like living dangerously.
 
-To host your own copy of Element, the quickest bet is to use a pre-built
-released version of Element:
+To host your own copy of Digi Work Hub, the quickest bet is to use a pre-built
+released version of Digi Work Hub:
 
 1. Download the latest version from https://github.com/vector-im/element-web/releases
 1. Untar the tarball on your web server
