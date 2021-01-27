@@ -128,8 +128,8 @@ let meetApi: any; // JitsiMeetExternalAPI
 
         enableJoinButton(); // always enable the button
     } catch (e) {
-        console.error("Error setting up Jitsi widget", e);
-        document.getElementById("widgetActionContainer").innerText = "Failed to load Jitsi widget";
+        console.error("Error setting up with widget", e);
+        document.getElementById("widgetActionContainer").innerText = "Failed to load widget";
     }
 })();
 
@@ -189,7 +189,7 @@ function joinConference() { // event handler bound in HTML
         if (!openIdToken?.access_token) { // eslint-disable-line camelcase
             // We've failing to get a token, don't try to init conference
             console.warn('Expected to have an OpenID credential, cannot initialize widget.');
-            document.getElementById("widgetActionContainer").innerText = "Failed to load Jitsi widget";
+            document.getElementById("widgetActionContainer").innerText = "Failed to load widget";
             return;
         }
         jwt = createJWTToken();
@@ -204,8 +204,8 @@ function joinConference() { // event handler bound in HTML
     }
 
     console.warn(
-        "[Jitsi Widget] The next few errors about failing to parse URL parameters are fine if " +
-        "they mention 'external_api' or 'jitsi' in the stack. They're just Jitsi Meet trying to parse " +
+        "[Widget] The next few errors about failing to parse URL parameters are fine if " +
+        "they mention 'external_api'. They're just Meet trying to parse " +
         "our fragment values and not recognizing the options.",
     );
     const options = {
