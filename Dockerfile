@@ -1,9 +1,9 @@
 # Builder
-FROM node:14-buster as builder
+FROM node:12 as builder
 
 # Support custom branches of the react-sdk and js-sdk. This also helps us build
 # images of element-web develop.
-ARG USE_CUSTOM_SDKS=false
+ARG USE_CUSTOM_SDKS=true
 ARG REACT_SDK_REPO="https://github.com/matrix-org/matrix-react-sdk.git"
 ARG REACT_SDK_BRANCH="master"
 ARG JS_SDK_REPO="https://github.com/matrix-org/matrix-js-sdk.git"
@@ -19,13 +19,14 @@ WORKDIR /src
 COPY . /src
 RUN dos2unix /src/scripts/docker-link-repos.sh && bash /src/scripts/docker-link-repos.sh
 RUN yarn --network-timeout=100000 install
+RUN ls -la
 RUN yarn build
 
 # Copy the config now so that we don't create another layer in the app image
 RUN cp /src/config.sample.json /src/webapp/config.json
 
 # Ensure we populate the version file
-RUN dos2unix /src/scripts/docker-write-version.sh && bash /src/scripts/docker-write-version.sh
+# RUN dos2unix /src/scripts/docker-write-version.sh && bash /src/scripts/docker-write-version.sh
 
 
 # App
