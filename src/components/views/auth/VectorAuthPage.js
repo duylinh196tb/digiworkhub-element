@@ -60,7 +60,6 @@ export default class VectorAuthPage extends React.PureComponent {
             bottom: 0,
             left: 0,
             filter: 'blur(40px)',
-            background: pageStyle.background,
         };
 
         const modalContentStyle = {
@@ -70,8 +69,12 @@ export default class VectorAuthPage extends React.PureComponent {
             borderRadius: '8px',
         };
 
+        const welcomeBackground = {
+            backgroundColor: '#151a44'
+        }
+
         return (
-            <div className="mx_AuthPage" style={pageStyle}>
+            <div className="mx_AuthPage" style={welcomeBackground}>
                 <div className="mx_AuthPage_modal" style={modalStyle}>
                     <div className="mx_AuthPage_modalBlur" style={blurStyle} />
                     <div className="mx_AuthPage_modalContent" style={modalContentStyle}>
