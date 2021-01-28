@@ -5,7 +5,7 @@ FROM node:12 as builder
 # images of element-web develop.
 ARG USE_CUSTOM_SDKS=true
 ARG REACT_SDK_REPO="https://github.com/duylinh196tb/digiworkhub-react-sdk.git"
-ARG REACT_SDK_BRANCH="main"
+ARG REACT_SDK_BRANCH="develop"
 ARG JS_SDK_REPO="https://github.com/matrix-org/matrix-js-sdk.git"
 ARG JS_SDK_BRANCH="master"
 
@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y git dos2unix \
 WORKDIR /src
 
 COPY . /src
-# RUN dos2unix /src/scripts/docker-link-repos.sh && bash /src/scripts/docker-link-repos.sh
+RUN dos2unix /src/scripts/docker-link-repos.sh && bash /src/scripts/docker-link-repos.sh
 RUN yarn --network-timeout=100000 install
 RUN ls -la
 RUN yarn build
