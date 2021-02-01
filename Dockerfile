@@ -17,8 +17,8 @@ RUN apt-get update && apt-get install -y git dos2unix \
 WORKDIR /src
 
 COPY . /src
-# RUN dos2unix /src/scripts/docker-link-repos.sh && bash /src/scripts/docker-link-repos.sh
-RUN bash /src/scripts/docker-link-repos.sh
+RUN dos2unix /src/scripts/docker-link-repos.sh && bash /src/scripts/docker-link-repos.sh
+# RUN bash /src/scripts/docker-link-repos.sh
 RUN yarn --network-timeout=100000 install
 RUN ls -la
 RUN yarn build
