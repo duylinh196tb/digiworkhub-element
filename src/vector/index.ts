@@ -111,6 +111,7 @@ async function start() {
         // verifying a 3pid (but after we've loaded the config)
         // or if the user is following a deep link
         // (https://github.com/vector-im/element-web/issues/7378)
+
         // const preventRedirect = fragparts.params.client_secret || fragparts.location.length > 0;
 
         // if (!preventRedirect) {
@@ -123,6 +124,7 @@ async function start() {
         //         }
         //     }
         // }
+
 
         const loadOlmPromise = loadOlm();
         // set the platform for react sdk
