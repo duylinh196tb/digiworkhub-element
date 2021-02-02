@@ -15,29 +15,30 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-'use strict';
+"use strict";
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import SdkConfig from 'matrix-react-sdk/src/SdkConfig';
+import React from "react";
+import PropTypes from "prop-types";
+import SdkConfig from "matrix-react-sdk/src/SdkConfig";
 
 export default class VectorAuthHeaderLogo extends React.PureComponent {
-    static replaces = 'AuthHeaderLogo'
+    static replaces = "AuthHeaderLogo";
 
     static propTypes = {
         icon: PropTypes.string,
-    }
+    };
 
     render() {
         const brandingConfig = SdkConfig.get().branding;
-        let logoUrl = "themes/element/img/logos/logo.svg";
+        let logoUrl =
+            "https://digi-work-hub.s3-ap-southeast-1.amazonaws.com/rebrandalldigiworkhublogo/DigiWorkHub_Logo-16.png";
         if (brandingConfig && brandingConfig.authHeaderLogoUrl) {
             logoUrl = brandingConfig.authHeaderLogoUrl;
         }
 
         return (
             <div className="mx_AuthHeaderLogo">
-                <img src={logoUrl} alt="Element" />
+                <img src={logoUrl} alt="DigiWorkHub logo" />
             </div>
         );
     }
